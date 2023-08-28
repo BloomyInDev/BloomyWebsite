@@ -11,8 +11,8 @@ let styleddate = date.toLocaleString("en-US", {
 })
 ---
 <BaseLayout extendedTitle={frontmatter.title}>
-    <div class="m-1 p-1 rounded-xl shadow-xl bg-gray-800 h-32 overflow-clip">
-        <div class="flex flex-row justify-between items-center h-full">
+    <div class="m-1 p-2 rounded-xl shadow-xl bg-gray-800 min-h-32 overflow-clip">
+        <div class="flex flex-col-reverse md:flex-row justify-between items-center h-full">
             <div>
                 <h1 class="text-3xl font-bold">{frontmatter.title}</h1>
                 <p>Published on: <a class="font-bold">{styleddate}</a></p>
@@ -24,10 +24,10 @@ let styleddate = date.toLocaleString("en-US", {
                     )}
                 </div>
             </div>
-            {frontmatter.image.enable && <div class="object-contain max-h-full max-w-full m-2"><img src={frontmatter.image.url} alt={frontmatter.image.alt} class="h-28"></div>}
+            {frontmatter.image.enable && <div class="object-contain max-h-full max-w-full m-2"><img src={frontmatter.image.url} alt={frontmatter.image.alt} class="max-h-28"></div>}
         </div>
     </div>
-    <div class="m-1 p-1 rounded-xl shadow-xl bg-gray-800">
+    <div class="m-1 p-2 rounded-xl shadow-xl bg-gray-800">
         <slot />
     </div> 
 </BaseLayout>

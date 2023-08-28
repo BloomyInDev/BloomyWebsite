@@ -1,6 +1,11 @@
 ---
+import Github from "./socials/Github.astro";
+import Insta from "./socials/Insta.astro";
 ---
-<footer class="w-full bg-gray-800 flex-row">
-    <p>Bloomy Website</p>
-    <a href="https://github.com/BloomyInDev">Github</a>
+<footer class="w-full bg-gray-800 flex flex-row p-2 justify-between items-center">
+    <p>Bloomy Website, <a href="https://raw.githubusercontent.com/BloomyInDev/BloomyWebsite/master/LICENSE" class="underline">license AGPL v3.0</a></p>
+    <div class="flex flex-row-reverse gap-x-1">
+        <Github/>
+        <Insta/>
+    </div>
 </footer>
