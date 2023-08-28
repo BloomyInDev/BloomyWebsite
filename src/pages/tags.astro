@@ -1,0 +1,21 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Button from '../components/basics/Button.astro';
+const allPosts = await Astro.glob('./posts/*.md');
+let tags = []
+allPosts.forEach(post =>{
+    if (post.frontmatter.tags) {
+        post.frontmatter.tags.forEach(tag => tags.push(tag));
+    }
+})
+
+---
+<BaseLayout extendedTitle="Tags">
+    <p class="text-center text-xl">All Tags</p>
+    <br>
+    <div class="grid custom-grid justify-center gap-2">
+        {tags.map((tag) => <div class="flex items-center justify-center">
+            <Button href={`/tags/${tag}`} text={tag}/>
+        </div>)}
+    </div>
+</BaseLayout>

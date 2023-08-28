@@ -11,12 +11,16 @@ const {extendedTitle} = Astro.props
         <meta name="viewport" content="width=device-width" />
         <meta name="generator" content={Astro.generator} />
         <title>{extendedTitle ? `${extendedTitle} - Bloomy Website` : "Bloomy Website"}</title>
+        <script>
+            window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+        </script>
+        <script defer src="/_vercel/insights/script.js"></script>
     </head>
     <body class="m-0 bg-gray-700 text-gray-300 flex flex-col justify-between h-full min-h-screen">
-		<Navigation/>
-        <div class="m-1">
-            <slot/>
-        </div>
-		<Footer/>
+            <Navigation/>
+            <div class="m-1">
+                <slot/>
+            </div>
+            <Footer/>
     </body>
 </html>

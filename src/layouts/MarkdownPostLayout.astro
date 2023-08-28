@@ -1,6 +1,6 @@
 ---
-import { imageConfig } from 'astro:assets';
 import BaseLayout from './BaseLayout.astro';
+import Button from '../components/basics/Button.astro';
 const { frontmatter } = Astro.props;
 let date = new Date(Date.parse(frontmatter.pubDate.slice(0,10)))
 let styleddate = date.toLocaleString("en-US", {
@@ -11,14 +11,20 @@ let styleddate = date.toLocaleString("en-US", {
 })
 ---
 <BaseLayout extendedTitle={frontmatter.title}>
-    <div class="m-1 p-1 rounded-xl shadow-xl bg-gray-800 h-28 overflow-clip">
+    <div class="m-1 p-1 rounded-xl shadow-xl bg-gray-800 h-32 overflow-clip">
         <div class="flex flex-row justify-between items-center h-full">
             <div>
                 <h1 class="text-3xl font-bold">{frontmatter.title}</h1>
                 <p>Published on: <a class="font-bold">{styleddate}</a></p>
                 <p>Written by <a class="font-bold">{frontmatter.author}</a></p>
+                <div class="flex items-center justify-left">
+                    <p>Tags:</p>
+                    {frontmatter.tags.map((tag) => 
+                        <Button href={`/tags/${tag}`} text={tag}/>
+                    )}
+                </div>
             </div>
-            {frontmatter.image.enable && <div class="object-contain max-h-full max-w-full m-2"><img src={frontmatter.image.url} alt={frontmatter.image.alt} class="h-24"></div>}
+            {frontmatter.image.enable && <div class="object-contain max-h-full max-w-full m-2"><img src={frontmatter.image.url} alt={frontmatter.image.alt} class="h-28"></div>}
         </div>
     </div>
     <div class="m-1 p-1 rounded-xl shadow-xl bg-gray-800">
