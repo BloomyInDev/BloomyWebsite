@@ -1,0 +1,32 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PostCard from '../../components/basics/PostCard.astro';
+import '../../styles/custom-grid.css';
+export async function getStaticPaths() {
+    const allPosts = await Astro.glob('../posts/*.md');
+    let tags = []
+    allPosts.forEach(post =>{
+        if (post.frontmatter.tags) {
+            post.frontmatter.tags.forEach(tag => tags.push({ params: { tag: tag }, props:{posts: allPosts} }));
+        }
+    })
+
+    return tags
+}
+
+const { tag } = Astro.params;
+const { posts } = Astro.props;
+const filteredPosts = posts.filter((post) => post.frontmatter.tags?.includes(tag));
+---
+
+<BaseLayout extendedTitle={`${tag} Tag`}>
+    <p class="text-center text-xl">Posts with tag <a class="font-bold">{tag}</a></p>
+    <br>
+    <div class="grid custom-grid justify-center gap-2">
+    {filteredPosts.map((post)=>
+        <div class="flex items-center justify-center">
+            <PostCard postName={post.frontmatter.title} postUrl={post.url} postDate={post.frontmatter.pubDate}></PostCard>
+        </div>
+    )}
+    </div>
+</BaseLayout>

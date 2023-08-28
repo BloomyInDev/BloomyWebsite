@@ -1,0 +1,22 @@
+---
+import Navigation from '../components/Navigation.astro';
+import Footer from '../components/Footer.astro';
+const {extendedTitle} = Astro.props
+---
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+		<link rel="icon" href="/favicon.png" />
+        <meta name="viewport" content="width=device-width" />
+        <meta name="generator" content={Astro.generator} />
+        <title>{extendedTitle ? `${extendedTitle} - Bloomy Website` : "Bloomy Website"}</title>
+    </head>
+    <body class="m-0 bg-gray-700 text-gray-300 flex flex-col justify-between h-full min-h-screen">
+		<Navigation/>
+        <div class="m-1">
+            <slot/>
+        </div>
+		<Footer/>
+    </body>
+</html>
