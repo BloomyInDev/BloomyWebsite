@@ -11,9 +11,9 @@ let styleddate = date.toLocaleString("en-US", {
 })
 ---
 <BaseLayout extendedTitle={frontmatter.title}>
-    <div class="m-1 p-2 rounded-xl shadow-xl bg-gray-800 min-h-32 overflow-clip">
+    <div class="m-1 mb-2 p-2 rounded-xl shadow-xl bg-gray-800 min-h-32 overflow-clip">
         <div class="flex flex-col-reverse md:flex-row justify-between items-center h-full">
-            <div>
+            <div class="flex flex-col items-center lg:items-start">
                 <h1 class="text-3xl font-bold">{frontmatter.title}</h1>
                 <p>Published on: <a class="font-bold">{styleddate}</a></p>
                 <p>Written by <a class="font-bold">{frontmatter.author}</a></p>
@@ -28,6 +28,8 @@ let styleddate = date.toLocaleString("en-US", {
         </div>
     </div>
     <div class="m-1 p-2 rounded-xl shadow-xl bg-gray-800">
-        <slot />
+        <div class="prose max-w-full prose-invert prose-a:after:content-['_↗']">
+            <slot />
+        </div>
     </div> 
 </BaseLayout>

@@ -15,8 +15,8 @@ Welcome to my blog! Here, I will share my all my (_i thing_) useful content that
 
 Don't expect an constant flow of content, i will post when i have something interesting to post
 
-I think i will post someday the story of one of my biggest project <u>[NuageBleu](https://nuagebleu.fun)</u>
+I think i will post someday the story of one of my biggest project [NuageBleu](https://nuagebleu.fun)
 
-All this website is build with <u>[Astro](https://astro.build)</u>
+All this website is build with [Astro](https://astro.build)
 
 Have a good day
