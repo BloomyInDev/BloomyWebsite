@@ -4,13 +4,48 @@ import Button from '../components/basics/HomeButton.astro'
 ---
 
 <BaseLayout extendedTitle="Home">
-    <div class="flex flex-row justify-center z-10">
-        <div class="flex flex-row justify-center">
-            <img src="/favicon.png" alt="My logo" class="w-32 rounded-full">
-            <div class="flex flex-col justify-center">
-                <Button href="/blog" text="Blog"/>
-                <Button href="/about" text="About me"/>
+    <div class="flex items-center justify-center h-[65vh] lg:h-[75vh]">
+        <div class="flex flex-col justify-center z-10">
+            <object data="/me.webp" type="image/webp" class="w-32 rounded-full">
+                <img src="/me.png" alt="My logo" class="w-32 rounded-full"/>
+            </object>
+            
+            <div class="mx-4">
+                <div class="flex flex-col justify-center w-full">
+                    <Button href="/blog" text="Blog"/>
+                    <Button href="/about" text="About me"/>
+                </div>
             </div>
         </div>
     </div>
+    <div>
+        <div class="flex items-center justify-center h-18 w-full">
+            <div id="arrowDownDiv" class="h-14 w-14 rounded-full bg-gray-600 arrow-move flex items-center justify-center hover:bg-gray-500 group transition-all duration-100 ease-in-out">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-12 fill-gray-500 group-hover:fill-gray-400 transition-all duration-100 ease-in-out" viewBox="0 0 384 512">
+                    <!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                    <path d="M169.4 470.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 370.8 224 64c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 306.7L54.6 265.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z"/>
+                </svg>
+            </div>
+        </div>
+        <div id="bottom" class="h-16 flex justify-center">
+            <p class="text-2xl font-bold text-center m-auto">All my projects</p>
+        </div>
+        <br>
+        <div class="flex justify-center"><div class="w-1 h-[100vh] bg-white rounded-full"/></div>
+    </div>
 </BaseLayout>
+<script>
+    document.getElementById('arrowDownDiv').addEventListener('click',()=>{
+        document.getElementById('bottom').scrollIntoView({ behavior: 'smooth' })
+    })
+</script>
+<style>
+    .arrow-move {
+        animation: mover 1500ms infinite  alternate;
+    }
+    @keyframes mover {
+        0% { transform: translateY(-20px); }
+        90% { transform: translateY(0px);}
+        100% { transform: translateY(0px);}
+    }
+</style>
