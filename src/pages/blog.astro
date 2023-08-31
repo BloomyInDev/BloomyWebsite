@@ -11,8 +11,8 @@ posts.sort((a,b)=>Date.parse(b.frontmatter.pubDate) - Date.parse(a.frontmatter.p
     <p class="text-center text-xl">All Posts <a href="/tags" class="underline">Show all tags</a></p>
     <br>
     <div class="grid custom-grid justify-center gap-2">
-        {posts.map((post) => <div class="flex items-center justify-center">
-            <PostCard postName={post.frontmatter.title} postUrl={post.url} postDate={post.frontmatter.pubDate}></PostCard>
+        {posts.map((post,i) => <div class="flex items-center justify-center">
+            <PostCard postName={post.frontmatter.title} postUrl={post.url} postDate={post.frontmatter.pubDate} postId={i}></PostCard>
         </div>)}
     </div>
 </BaseLayout>

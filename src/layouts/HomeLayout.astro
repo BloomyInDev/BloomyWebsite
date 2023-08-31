@@ -17,6 +17,7 @@ const {extendedTitle} = Astro.props
         <script defer src="/_vercel/insights/script.js"></script>
     </head>
     <body class="from-blue-950 to-blue-900 bg-gradient-to-b">
+        <div class="overflow-hidden"><div class="absolute top-0 left-0 -z-50 gradient w-full h-full"/></div>
         <div class="m-0 text-gray-300 flex flex-col justify-between h-full min-h-screen">
             <Navigation/>
             <div class="m-1">
@@ -26,3 +27,14 @@ const {extendedTitle} = Astro.props
         </div>
     </body>
 </html>
+<style>
+    @keyframes mover {
+        0% { transform: scale(50%); }
+        100% { transform: scale(100%); }
+    }
+    .gradient {
+        opacity: 1;
+        background: content-box radial-gradient(circle, rgb(56 189 248), transparent 25%);
+        animation: mover 2.5s infinite alternate;
+    }
+</style>

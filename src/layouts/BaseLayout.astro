@@ -22,11 +22,13 @@ const {extendedTitle} = Astro.props
         </script>
         <script defer src="/_vercel/insights/script.js"></script>
     </head>
-    <body class="m-0 bg-blue-950 text-gray-300 flex flex-col justify-between h-full min-h-screen">
+    <body class="from-blue-950 to-blue-900 bg-gradient-to-b">
+        <div class="m-0 text-gray-300 flex flex-col justify-between h-full min-h-screen">
             <Navigation/>
             <div class="m-1">
                 <slot/>
             </div>
             <Footer/>
+        </div>
     </body>
 </html>
