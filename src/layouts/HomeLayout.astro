@@ -7,7 +7,7 @@ const {extendedTitle} = Astro.props
 <html lang="en">
     <head>
         <meta charset="utf-8" />
-		<link rel="icon" href="/favicon.png" />
+		<link rel="icon" href="/me.webp" />
         <meta name="viewport" content="width=device-width" />
         <meta name="generator" content={Astro.generator} />
         <title>{extendedTitle ? `${extendedTitle} - Bloomy Website` : "Bloomy Website"}</title>
@@ -32,9 +32,21 @@ const {extendedTitle} = Astro.props
         0% { transform: scale(50%); }
         100% { transform: scale(100%); }
     }
+    @keyframes mover-phone {
+        0% { transform: scale(25%); }
+        100% { transform: scale(100%); }
+    }
     .gradient {
         opacity: 1;
         background: content-box radial-gradient(circle, rgb(56 189 248), transparent 25%);
         animation: mover 2.5s infinite alternate;
+    }
+    @media (max-width: 768px) { 
+        .gradient {
+            opacity: 1;
+            background: content-box radial-gradient(circle, rgb(56 189 248), transparent 40%);
+            animation: mover-phone 2.5s infinite alternate;
+            
+        } 
     }
 </style>
