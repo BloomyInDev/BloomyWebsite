@@ -1,15 +1,114 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
+import BaseLayout from '../layouts/BaseLayout.astro'
+import ProjectCard from '../components/basics/ProjectCard.astro'
+import Button from '../components/basics/Button.astro'
+// All languages
+import Bootstrap from '../components/languages/Bootstrap.astro'
+import Css from '../components/languages/Css.astro'
+import Git from '../components/languages/Git.astro'
+import GitHub from '../components/languages/GitHub.astro'
+import Go from '../components/languages/Go.astro'
+import Html from '../components/languages/Html.astro'
+import Java from '../components/languages/Java.astro'
+import JavaScript from '../components/languages/JavaScript.astro'
+import NodeJS from '../components/languages/NodeJS.astro'
+import Python from '../components/languages/Python.astro'
+import Svelte from '../components/languages/Svelte.astro'
+import TailwindCss from '../components/languages/TailwindCss.astro'
+import VueJS from '../components/languages/VueJS.astro'
+
+import '../styles/custom-grid.css'
 ---
 
 <BaseLayout extendedTitle="About">
-    <p>Bastien aka Bloomy</p>
-    <p>Student at Lycée Jean Moulin</p>
-    <div class="hidden">
-        <p>My passions</p>
-        <ul>
-            <li>Codding</li>
-        </ul>
+    <div class="flex justify-center">
+        <p class="rounded-lg border-2 border-amber-500 bg-amber-400 text-amber-700">
+            ⚠ This whole section is in work ⚠
+        </p>
     </div>
-    <p>This is WIP</p>
+    <div class="mx-10 flex gap-2">
+        <img src="/me.webp" alt="My logo" class="w-32 rounded-full" />
+        <div class="flex flex-col justify-center">
+            <p class="text-3xl">Bastien aka Bloomy</p>
+            <p class="text-xl">Student at Lycée Jean Moulin</p>
+        </div>
+    </div>
+    <p>
+        Hello, i love codding lots of things. In general, i publish every project i work on on <a
+            href="https://github.com/BloomyInDev"
+            class="underline">Github</a
+        >
+    </p>
+    <p class="my-2 grow text-center text-2xl">My projects</p>
+
+    <div class="custom-grid grid place-items-center gap-2">
+        <ProjectCard
+            projectName="NuageBleu"
+            projectDesc="NuageBleu is a Discord Bot. Everything is hosted by WinHeberg (no pub)"
+            projectDate="From February 25, 2023 to now"
+            projectUrl="https://nuagebleu.fun"
+        >
+            <NodeJS /><Svelte /><TailwindCss /><Git />
+        </ProjectCard>
+        <ProjectCard
+            projectName="MotuWeb"
+            projectDesc="A broken clone of Wordle in French. Deployed on GitHub Pages"
+            projectDate="From March 27, 2023 to June 6, 2023"
+            projectUrl="https://bloomyindev.github.io/MotuWeb"
+        >
+            <VueJS /><Bootstrap /><GitHub />
+        </ProjectCard>
+        <ProjectCard
+            projectName="BA SNT Website"
+            projectDesc="My first real try at HTML, CSS and JavaScript. Deployed on GitHub Pages"
+            projectDate="From February 8, 2022 to May 13, 2022"
+            projectUrl="https://bloomyindev.github.io/BA-SNT-Website"
+        >
+            <Html /><Css /><JavaScript /><GitHub />
+        </ProjectCard>
+        <!--<ProjectCard projectName="Test" projectDate="">
+            <Git /><Go /><NodeJS /><Python /><Svelte /><VueJS />
+        </ProjectCard>-->
+        <p>WIP</p>
+    </div>
+
+    <p class="my-2 grow text-center text-2xl">My tools</p>
+
+    <button
+        id="detailswitch"
+        class="m-1 rounded-lg bg-gray-600 p-1 text-center font-semibold transition-all delay-0 duration-200 ease-in-out hover:bg-blue-600"
+        >Switch details</button
+    >
+    <div id="lowdetailtools">
+        <p>WIP</p>
+    </div>
+    <div id="highdetailtools" class="hidden">
+        <p class="text-lg">Solid knowledge</p>
+        <div class="my-2 flex items-center justify-start gap-1">
+            <p><Python /> Python: Help me to prototype something fast without having to worry on</p>
+        </div>
+        <p class="text-lg">Medium knowledge</p>
+        <div class="my-2 flex items-center justify-start gap-1">
+            <p><NodeJS /> NodeJS: Useful to make backend server and other things that rely on it</p>
+        </div>
+        <div class="my-2 flex items-center justify-start gap-1">
+            <p><JavaScript /> JavaScript: It's used everywhere, idk why</p>
+        </div>
+        <p class="text-lg">Basic knowledge</p>
+        <p></p>
+    </div>
 </BaseLayout>
+<script>
+    let detailswitch = document.getElementById('detailswitch'),
+        lowdetailtools = document.getElementById('lowdetailtools'),
+        highdetailtools = document.getElementById('highdetailtools')
+    //detailswitch.addEventListener('click', () => {
+    //    if (lowdetailtools.classList.value == 'hidden') {
+    //        lowdetailtools.classList.remove('hidden')
+    //        highdetailtools.classList.add('hidden')
+    //    } else {
+    //        highdetailtools.classList.remove('hidden')
+    //        lowdetailtools.classList.add('hidden')
+    //    }
+    //})
+</script>

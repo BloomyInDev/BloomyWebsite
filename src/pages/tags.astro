@@ -1,21 +1,26 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
-import Button from '../components/basics/Button.astro';
-const allPosts = await Astro.glob('./posts/*.md');
+import BaseLayout from '../layouts/BaseLayout.astro'
+import Tag from '../components/basics/Tag.astro'
+const allPosts = await Astro.glob('./posts/*.md')
 let tags = []
-allPosts.forEach(post =>{
+allPosts.forEach((post) => {
     if (post.frontmatter.tags) {
-        post.frontmatter.tags.forEach(tag => tags.push(tag));
+        post.frontmatter.tags.forEach((tag) => {
+            if (!tags.includes(tag)) tags.push(tag)
+        })
     }
 })
-
 ---
+
 <BaseLayout extendedTitle="Tags">
     <p class="text-center text-xl">All Tags</p>
-    <br>
-    <div class="grid custom-grid justify-center gap-2">
-        {tags.map((tag) => <div class="flex items-center justify-center">
-            <Button href={`/tags/${tag}`} text={tag}/>
-        </div>)}
+    <br />
+    <div class="grid grid-flow-row justify-center">
+        <div>{tags.map((tag) => <Tag href={`/tags/${tag}`} tag={tag} />)}</div>
     </div>
 </BaseLayout>
+<style>
+    .custom-grid {
+        grid-template-rows: repeat(auto-fit, minmax(8rem, 1fr));
+    }
+</style>

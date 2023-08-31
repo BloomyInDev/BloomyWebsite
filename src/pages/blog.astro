@@ -1,18 +1,28 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
-import PostCard from '../components/basics/PostCard.astro';
-import '../styles/custom-grid.css';
-const allPosts = await Astro.glob('../pages/posts/*.md');
+import BaseLayout from '../layouts/BaseLayout.astro'
+import PostCard from '../components/basics/PostCard.astro'
+import '../styles/custom-grid.css'
+const allPosts = await Astro.glob('../pages/posts/*.md')
 let posts = [...allPosts]
-posts.sort((a,b)=>Date.parse(b.frontmatter.pubDate) - Date.parse(a.frontmatter.pubDate))
+posts.sort((a, b) => Date.parse(b.frontmatter.pubDate) - Date.parse(a.frontmatter.pubDate))
 ---
 
 <BaseLayout extendedTitle="Blog">
     <p class="text-center text-xl">All Posts <a href="/tags" class="underline">Show all tags</a></p>
-    <br>
-    <div class="grid custom-grid justify-center gap-2">
-        {posts.map((post,i) => <div class="flex items-center justify-center">
-            <PostCard postName={post.frontmatter.title} postUrl={post.url} postDate={post.frontmatter.pubDate} postId={i}></PostCard>
-        </div>)}
+    <br />
+    <div class="custom-grid grid justify-center gap-2">
+        {
+            posts.map((post, i) => (
+                <div class="flex items-center justify-center">
+                    <PostCard
+                        postName={post.frontmatter.title}
+                        postDesc={post.frontmatter.description}
+                        postUrl={post.url}
+                        postDate={post.frontmatter.pubDate}
+                        postId={i}
+                    />
+                </div>
+            ))
+        }
     </div>
 </BaseLayout>

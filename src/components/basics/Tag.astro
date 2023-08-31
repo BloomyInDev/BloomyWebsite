@@ -1,0 +1,39 @@
+---
+const { tag, href = '' } = Astro.props
+const stringToColorList = (str: string) => {
+    let hash = 0
+    if (str.length === 0) return hash
+    for (let i = 0; i < str.length; i++) {
+        hash = str.charCodeAt(i) + ((hash << 5) - hash)
+        hash = hash & hash
+    }
+    let rgb = [0, 0, 0]
+    for (let i = 0; i < 3; i++) {
+        let value = (hash >> (i * 8)) & 255
+        rgb[i] = value
+    }
+    return rgb
+}
+const listToColor = (list) => {
+    return `rgb(${list[0]}, ${list[1]}, ${list[2]})`
+}
+//const colorFromString = stringToColor(tag)
+const colorFromString1 = listToColor(
+    stringToColorList(tag).map((e) => (e - 150 <= 0 ? 0 : e - 150))
+)
+const colorFromString2 = listToColor(stringToColorList(tag))
+---
+
+<a class="tag-color rounded-full text-center" href={href}>
+    {tag}
+</a>
+<style define:vars={{ colorFromString1, colorFromString2 }}>
+    a.tag-color {
+        background-color: var(--colorFromString2);
+        padding: 4px;
+        margin: 4px;
+        border-color: var(--colorFromString1);
+        border-width: 3px;
+        color: rgb(31 41 55);
+    }
+</style>
