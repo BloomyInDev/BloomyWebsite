@@ -3,34 +3,41 @@ import BaseLayout from '../layouts/BaseLayout.astro'
 import ProjectCard from '../components/basics/ProjectCard.astro'
 import Button from '../components/basics/Button.astro'
 // All languages
-import Bootstrap from '../components/languages/Bootstrap.astro'
-import Css from '../components/languages/Css.astro'
-import Git from '../components/languages/Git.astro'
-import GitHub from '../components/languages/GitHub.astro'
-import Go from '../components/languages/Go.astro'
-import Html from '../components/languages/Html.astro'
-import Java from '../components/languages/Java.astro'
-import JavaScript from '../components/languages/JavaScript.astro'
-import NodeJS from '../components/languages/NodeJS.astro'
-import Python from '../components/languages/Python.astro'
-import Svelte from '../components/languages/Svelte.astro'
-import TailwindCss from '../components/languages/TailwindCss.astro'
-import VueJS from '../components/languages/VueJS.astro'
+import AstroWeb from '../components/technologies/AstroWeb.astro'
+import Bootstrap from '../components/technologies/Bootstrap.astro'
+import Css from '../components/technologies/Css.astro'
+import Docker from '../components/technologies/Docker.astro'
+import Git from '../components/technologies/Git.astro'
+import GitHub from '../components/technologies/GitHub.astro'
+import Go from '../components/technologies/Go.astro'
+import Html from '../components/technologies/Html.astro'
+import Java from '../components/technologies/Java.astro'
+import JavaScript from '../components/technologies/JavaScript.astro'
+import Linux from '../components/technologies/Linux.astro'
+import NodeJS from '../components/technologies/NodeJS.astro'
+import Python from '../components/technologies/Python.astro'
+import SQLite from '../components/technologies/SQLite.astro'
+import Svelte from '../components/technologies/Svelte.astro'
+import TailwindCss from '../components/technologies/TailwindCss.astro'
+import TypeScript from '../components/technologies/TypeScript.astro'
+import Vercel from '../components/technologies/Vercel.astro'
+import VueJS from '../components/technologies/VueJS.astro'
 
 import '../styles/custom-grid.css'
+import Github from '../components/socials/Github.astro'
 ---
 
 <BaseLayout extendedTitle="About">
     <div class="flex justify-center">
-        <p class="rounded-lg border-2 border-amber-500 bg-amber-400 text-amber-700">
-            ⚠ This whole section is in work ⚠
+        <p class="rounded-xl border-2 border-amber-500 bg-amber-400 p-1 text-amber-700">
+            ⚠ This whole section is still in work ⚠
         </p>
     </div>
     <div class="mx-10 flex gap-2">
         <img src="/me.webp" alt="My logo" class="w-32 rounded-full" />
         <div class="flex flex-col justify-center">
             <p class="text-3xl">Bastien aka Bloomy</p>
-            <p class="text-xl">Student at Lycée Jean Moulin</p>
+            <p class="text-xl">Student</p>
         </div>
     </div>
     <p>
@@ -39,8 +46,7 @@ import '../styles/custom-grid.css'
             class="underline">Github</a
         >
     </p>
-    <p class="my-2 grow text-center text-2xl">My projects</p>
-
+    <p class="my-2 grow text-center text-2xl">Collaboration projects</p>
     <div class="custom-grid grid place-items-center gap-2">
         <ProjectCard
             projectName="NuageBleu"
@@ -51,12 +57,47 @@ import '../styles/custom-grid.css'
             <NodeJS /><Svelte /><TailwindCss /><Git />
         </ProjectCard>
         <ProjectCard
+            projectName="Dungeon Adventure"
+            projectDesc="A little infinite dungeon game. Written with the Pyxel library"
+            projectDate="From April, 2023 to July 18, 2023"
+            projectUrl="https://github.com/BloomyInDev/Dungeon-Adventure"
+        >
+            <Python />
+        </ProjectCard>
+    </div>
+    <p class="my-2 grow text-center text-2xl">My projects</p>
+    <div class="custom-grid grid place-items-center gap-2">
+        <ProjectCard
+            projectName="Bloomy Website"
+            projectDesc="The website you are actualy"
+            projectDate="From June 19, 2023 to now"
+            projectUrl="https://github.com/BloomyInDev/NumworksVersionChecker"
+        >
+            <AstroWeb /><JavaScript /><TailwindCss />
+        </ProjectCard>
+        <ProjectCard
+            projectName="Numworks Version Checker"
+            projectDesc="A little service that notifies you on new version updates of the Numworks calculator"
+            projectDate="From August 29, 2023 to now"
+            projectUrl="https://github.com/BloomyInDev/NumworksVersionChecker"
+        >
+            <NodeJS /><JavaScript /><Docker />
+        </ProjectCard>
+        <ProjectCard
             projectName="MotuWeb"
             projectDesc="A broken clone of Wordle in French. Deployed on GitHub Pages"
             projectDate="From March 27, 2023 to June 6, 2023"
             projectUrl="https://bloomyindev.github.io/MotuWeb"
         >
             <VueJS /><Bootstrap /><GitHub />
+        </ProjectCard>
+        <ProjectCard
+            projectName="Numworks Workshop Scrapper"
+            projectDesc="A little script that let you download all your scripts"
+            projectDate="From January 5, 2023"
+            projectUrl="https://github.com/BloomyInDev/Numworks-Workshop-Scrapper"
+        >
+            <Python />
         </ProjectCard>
         <ProjectCard
             projectName="BA SNT Website"
@@ -66,10 +107,6 @@ import '../styles/custom-grid.css'
         >
             <Html /><Css /><JavaScript /><GitHub />
         </ProjectCard>
-        <!--<ProjectCard projectName="Test" projectDate="">
-            <Git /><Go /><NodeJS /><Python /><Svelte /><VueJS />
-        </ProjectCard>-->
-        <p>WIP</p>
     </div>
 
     <p class="my-2 grow text-center text-2xl">My tools</p>
@@ -77,38 +114,101 @@ import '../styles/custom-grid.css'
     <button
         id="detailswitch"
         class="m-1 rounded-lg bg-gray-600 p-1 text-center font-semibold transition-all delay-0 duration-200 ease-in-out hover:bg-blue-600"
-        >Switch details</button
+        >Switch to High Details</button
     >
-    <div id="lowdetailtools">
-        <p>WIP</p>
+    <div id="lowdetailtools" class="m-1 rounded-2xl bg-gray-800 p-1">
+        <p class="text-xl">Solid knowledge</p>
+        <p>Python</p>
+        <p class="text-xl">Medium knowledge</p>
+        <p>NodeJS, JavaScript, Go, HTML, CSS, TailwindCss, Git, Github, Svelte, SQLite</p>
+        <p class="text-xl">Basic knowledge</p>
+        <p>Astro, Bootstrap, Vue 3, TypeScript, Vercel, Linux, Docker, Java</p>
     </div>
-    <div id="highdetailtools" class="hidden">
-        <p class="text-lg">Solid knowledge</p>
+    <div id="highdetailtools" class="m-1 hidden rounded-2xl bg-gray-800 p-1">
+        <p class="text-xl">Solid knowledge</p>
         <div class="my-2 flex items-center justify-start gap-1">
-            <p><Python /> Python: Help me to prototype something fast without having to worry on</p>
+            <p>
+                <Python /> Python: Help me to prototype something fast without having to worry on
+                details
+            </p>
         </div>
-        <p class="text-lg">Medium knowledge</p>
+        <p class="text-xl">Medium knowledge</p>
         <div class="my-2 flex items-center justify-start gap-1">
             <p><NodeJS /> NodeJS: Useful to make backend server and other things that rely on it</p>
         </div>
         <div class="my-2 flex items-center justify-start gap-1">
             <p><JavaScript /> JavaScript: It's used everywhere, idk why</p>
         </div>
-        <p class="text-lg">Basic knowledge</p>
+        <div class="my-2 flex items-center justify-start gap-1">
+            <p><Go /> Go: When i want to code something that run <a class="italic">FAST</a></p>
+        </div>
+        <div class="my-2 flex items-center justify-start gap-1">
+            <p><Html /><Css /> HTML & CSS: A must to make a website</p>
+        </div>
+        <div class="my-2 flex items-center justify-start gap-1">
+            <p>
+                <TailwindCss /> Tailwind: To prototype an UI without having to imagine any class
+                name
+            </p>
+        </div>
+        <div class="my-2 flex items-center justify-start gap-1">
+            <p>
+                <Git /><Github /> Git & GitHub: To share and keep track of my work. Github pages is
+                also quite practical to deploy small websites
+            </p>
+        </div>
+        <div class="my-2 flex items-center justify-start gap-1">
+            <p><Svelte /> Svelte: An JavaScript framework that really good to work with</p>
+        </div>
+        <div class="my-2 flex items-center justify-start gap-1">
+            <p><SQLite /> SQLite & SQL: A must to work with databases</p>
+        </div>
+        <p class="text-xl">Basic knowledge</p>
+        <div class="my-2 flex items-center justify-start gap-1">
+            <p>
+                <AstroWeb /> Astro: Build fast website easily (less easily than with
+                Svelte/SvelteKit)
+            </p>
+        </div>
+        <div class="my-2 flex items-center justify-start gap-1">
+            <p><Bootstrap /> Bootstrap: Useful back when i didn't know Tailwind</p>
+        </div>
+        <div class="my-2 flex items-center justify-start gap-1">
+            <p><VueJS /> Vue 3: A good alternative to React</p>
+        </div>
+        <div class="my-2 flex items-center justify-start gap-1">
+            <p><TypeScript /> TypeScript: JavaScript but more strict</p>
+        </div>
+        <div class="my-2 flex items-center justify-start gap-1">
+            <p><Vercel /> Vercel: A neat way to deploy web apps without hassle</p>
+        </div>
+        <div class="my-2 flex items-center justify-start gap-1">
+            <p><Linux /> Linux: When Windows can't do what i want</p>
+        </div>
+        <div class="my-2 flex items-center justify-start gap-1">
+            <p><Docker /> Docker: To make an constant environment for my apps</p>
+        </div>
+        <div class="my-2 flex items-center justify-start gap-1">
+            <p><Java /> Java: To try to write Minecraft plugins</p>
+        </div>
         <p></p>
     </div>
 </BaseLayout>
 <script>
+    let detailstatus = true // True => Low details, False => High details
     let detailswitch = document.getElementById('detailswitch'),
         lowdetailtools = document.getElementById('lowdetailtools'),
         highdetailtools = document.getElementById('highdetailtools')
-    //detailswitch.addEventListener('click', () => {
-    //    if (lowdetailtools.classList.value == 'hidden') {
-    //        lowdetailtools.classList.remove('hidden')
-    //        highdetailtools.classList.add('hidden')
-    //    } else {
-    //        highdetailtools.classList.remove('hidden')
-    //        lowdetailtools.classList.add('hidden')
-    //    }
-    //})
+    detailswitch.addEventListener('click', () => {
+        if (detailstatus) {
+            detailswitch.innerText = 'Switch to Low Details'
+            highdetailtools.classList.remove('hidden')
+            lowdetailtools.classList.add('hidden')
+        } else {
+            detailswitch.innerText = 'Switch to High Details'
+            highdetailtools.classList.add('hidden')
+            lowdetailtools.classList.remove('hidden')
+        }
+        detailstatus = !detailstatus
+    })
 </script>
