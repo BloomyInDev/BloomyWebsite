@@ -28,19 +28,19 @@ import Github from '../components/socials/Github.astro'
 ---
 
 <BaseLayout extendedTitle="About">
-    <div class="flex justify-center">
+    <div class="flex justify-center m-4">
         <p class="rounded-xl border-2 border-amber-500 bg-amber-400 p-1 text-amber-700">
             ⚠ This whole section is still in work ⚠
         </p>
     </div>
-    <div class="mx-10 flex gap-2">
+    <div class="flex flex-col gap-2 justify-center items-center">
         <img src="/me.webp" alt="My logo" class="w-32 rounded-full" />
-        <div class="flex flex-col justify-center">
+        <div class="flex flex-col justify-center items-center">
             <p class="text-3xl">Bastien aka Bloomy</p>
             <p class="text-xl">Student</p>
         </div>
     </div>
-    <p>
+    <p class="text-center">
         Hello, i love codding lots of things. In general, i publish every project i work on on <a
             href="https://github.com/BloomyInDev"
             class="underline">Github</a
@@ -114,7 +114,7 @@ import Github from '../components/socials/Github.astro'
     <button
         id="detailswitch"
         class="m-1 rounded-lg bg-gray-600 p-1 text-center font-semibold transition-all delay-0 duration-200 ease-in-out hover:bg-blue-600"
-        >Switch to High Details</button
+        >Show more</button
     >
     <div id="lowdetailtools" class="m-1 rounded-2xl bg-gray-800 p-1">
         <p class="text-xl">Solid knowledge</p>
@@ -201,11 +201,11 @@ import Github from '../components/socials/Github.astro'
         highdetailtools = document.getElementById('highdetailtools')
     detailswitch.addEventListener('click', () => {
         if (detailstatus) {
-            detailswitch.innerText = 'Switch to Low Details'
+            detailswitch.innerText = 'Show less'
             highdetailtools.classList.remove('hidden')
             lowdetailtools.classList.add('hidden')
         } else {
-            detailswitch.innerText = 'Switch to High Details'
+            detailswitch.innerText = 'Show more'
             highdetailtools.classList.add('hidden')
             lowdetailtools.classList.remove('hidden')
         }

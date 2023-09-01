@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro'
 import PostCard from '../components/basics/PostCard.astro'
+import Button from '../components/basics/Button.astro'
 import '../styles/custom-grid.css'
 const allPosts = await Astro.glob('../pages/posts/*.md')
 let posts = [...allPosts]
@@ -8,7 +9,9 @@ posts.sort((a, b) => Date.parse(b.frontmatter.pubDate) - Date.parse(a.frontmatte
 ---
 
 <BaseLayout extendedTitle="Blog">
-    <p class="text-center text-xl">All Posts <a href="/tags" class="underline">Show all tags</a></p>
+    <div class="flex items-center justify-center">
+        <p class="text-center text-xl">All Posts</p><Button href="/tags" text="Show all tags"/>
+    </div>
     <br />
     <div class="custom-grid grid justify-center gap-2">
         {
