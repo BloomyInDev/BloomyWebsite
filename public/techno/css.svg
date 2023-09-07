@@ -1,9 +1,4 @@
----
-
----
-
-<div class="flex h-8 w-8 items-center justify-center">
-    <svg
+<svg
         xmlns:dc="http://purl.org/dc/elements/1.1/"
         xmlns:cc="http://creativecommons.org/ns#"
         xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
@@ -16,7 +11,7 @@
         version="1.1"
         inkscape:version="0.91 r13725"
         sodipodi:docname="CSS3.svg"
-        class="h-8 w-8"
+        width="2rem" height="2rem"
     >
         <defs id="defs3478"></defs>
         <sodipodi:namedview
@@ -96,4 +91,3 @@
             </g>
         </g>
     </svg>
-</div>

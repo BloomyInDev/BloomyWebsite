@@ -2,46 +2,42 @@
 import BaseLayout from '../layouts/BaseLayout.astro'
 import ProjectCard from '../components/basics/ProjectCard.astro'
 import Button from '../components/basics/Button.astro'
-// All languages
-import AstroWeb from '../components/technologies/AstroWeb.astro'
-import Bootstrap from '../components/technologies/Bootstrap.astro'
-import Css from '../components/technologies/Css.astro'
-import Docker from '../components/technologies/Docker.astro'
-import Git from '../components/technologies/Git.astro'
-import GitHub from '../components/technologies/GitHub.astro'
-import Go from '../components/technologies/Go.astro'
-import Html from '../components/technologies/Html.astro'
-import Java from '../components/technologies/Java.astro'
-import JavaScript from '../components/technologies/JavaScript.astro'
-import Linux from '../components/technologies/Linux.astro'
-import NodeJS from '../components/technologies/NodeJS.astro'
-import Python from '../components/technologies/Python.astro'
-import SQLite from '../components/technologies/SQLite.astro'
-import Svelte from '../components/technologies/Svelte.astro'
-import TailwindCss from '../components/technologies/TailwindCss.astro'
-import TypeScript from '../components/technologies/TypeScript.astro'
-import Vercel from '../components/technologies/Vercel.astro'
-import VueJS from '../components/technologies/VueJS.astro'
+import TechIcon from '../components/basics/TechIcon.astro'
 
 import '../styles/custom-grid.css'
-import Github from '../components/socials/Github.astro'
 ---
 
 <BaseLayout extendedTitle="About">
-    <div class="flex justify-center m-4">
-        <p class="rounded-xl border-2 border-amber-700 bg-amber-500 p-1 text-amber-800">
-            ⚠ This whole section is still in work ⚠
-        </p>
+    <div class="m-4 flex justify-center">
+        <div
+            class="flex w-fit flex-row items-center rounded-xl border-2 border-sky-700 bg-sky-500 p-1 text-blue-800"
+        >
+            <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                class="h-6 w-6 shrink-0 stroke-current"
+                ><path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg
+            >
+            <div class="m-1">
+                <p>This section is just an summary of my experiences.</p>
+                <p>If you want a more detailed CV, please contact me</p>
+            </div>
+        </div>
     </div>
-    <div class="flex flex-col gap-2 justify-center items-center">
+    <div class="flex flex-col items-center justify-center gap-2">
         <img src="/me.webp" alt="My logo" class="w-32 rounded-full" />
-        <div class="flex flex-col justify-center items-center">
+        <div class="flex flex-col items-center justify-center">
             <p class="text-3xl">Bastien aka Bloomy</p>
             <p class="text-xl">Student</p>
         </div>
     </div>
     <p class="text-center">
-        Hello, i love codding lots of things. In general, i publish every project i work on on <a
+        Hello, i love codding lots of things. In general, i publish every project i work on my <a
             href="https://github.com/BloomyInDev"
             class="underline">Github</a
         >
@@ -54,7 +50,9 @@ import Github from '../components/socials/Github.astro'
             projectDate="From February 25, 2023 to now"
             projectUrl="https://nuagebleu.fun"
         >
-            <NodeJS /><Svelte /><TailwindCss /><Git />
+            <TechIcon tech="NodeJS" /><TechIcon tech="Svelte" /><TechIcon
+                tech="TailwindCss"
+            /><TechIcon tech="Git" />
         </ProjectCard>
         <ProjectCard
             projectName="Dungeon Adventure"
@@ -62,7 +60,7 @@ import Github from '../components/socials/Github.astro'
             projectDate="From April, 2023 to July 18, 2023"
             projectUrl="https://github.com/BloomyInDev/Dungeon-Adventure"
         >
-            <Python />
+            <TechIcon tech="Python" />
         </ProjectCard>
     </div>
     <p class="my-2 grow text-center text-2xl">My projects</p>
@@ -73,7 +71,8 @@ import Github from '../components/socials/Github.astro'
             projectDate="From June 19, 2023 to now"
             projectUrl="https://github.com/BloomyInDev/NumworksVersionChecker"
         >
-            <AstroWeb /><JavaScript /><TailwindCss /><Vercel/>
+            <TechIcon tech="Astro" /><TechIcon tech="JavaScript" />
+            <TechIcon tech="TailwindCss" /><TechIcon tech="Vercel" />
         </ProjectCard>
         <ProjectCard
             projectName="Numworks Version Checker"
@@ -81,7 +80,7 @@ import Github from '../components/socials/Github.astro'
             projectDate="From August 29, 2023 to now"
             projectUrl="https://github.com/BloomyInDev/NumworksVersionChecker"
         >
-            <NodeJS /><JavaScript /><Docker />
+            <TechIcon tech="NodeJS" /><TechIcon tech="JavaScript" /><TechIcon tech="Docker" />
         </ProjectCard>
         <ProjectCard
             projectName="MotuWeb"
@@ -89,7 +88,7 @@ import Github from '../components/socials/Github.astro'
             projectDate="From March 27, 2023 to June 6, 2023"
             projectUrl="https://bloomyindev.github.io/MotuWeb"
         >
-            <VueJS /><Bootstrap /><GitHub />
+            <TechIcon tech="VueJS" /><TechIcon tech="Bootstrap" /><TechIcon tech="GitHub" />
         </ProjectCard>
         <ProjectCard
             projectName="Numworks Workshop Scrapper"
@@ -97,7 +96,7 @@ import Github from '../components/socials/Github.astro'
             projectDate="From January 5, 2023"
             projectUrl="https://github.com/BloomyInDev/Numworks-Workshop-Scrapper"
         >
-            <Python />
+            <TechIcon tech="Python" />
         </ProjectCard>
         <ProjectCard
             projectName="BA SNT Website"
@@ -105,93 +104,120 @@ import Github from '../components/socials/Github.astro'
             projectDate="From February 8, 2022 to May 13, 2022"
             projectUrl="https://bloomyindev.github.io/BA-SNT-Website"
         >
-            <Html /><Css /><JavaScript /><GitHub />
+            <TechIcon tech="Html" /><TechIcon tech="Css" /><TechIcon tech="JavaScript" /><TechIcon
+                tech="GitHub"
+            />
         </ProjectCard>
     </div>
 
     <p class="my-2 grow text-center text-2xl">My tools</p>
 
-    <button
-        id="detailswitch"
-        class="m-1 rounded-lg bg-gray-600 p-1 text-center font-semibold transition-all delay-0 duration-200 ease-in-out hover:bg-blue-600"
-        >Show more</button
-    >
-    <div id="lowdetailtools" class="m-1 rounded-2xl bg-gray-800 p-1">
-        <p class="text-xl">Solid knowledge</p>
-        <p>Python</p>
-        <p class="text-xl">Medium knowledge</p>
-        <p>NodeJS, JavaScript, Go, HTML, CSS, TailwindCss, Git, Github, Svelte, SQLite</p>
-        <p class="text-xl">Basic knowledge</p>
-        <p>Astro, Bootstrap, Vue 3, TypeScript, Vercel, Linux, Docker, Java</p>
-    </div>
-    <div id="highdetailtools" class="m-1 hidden rounded-2xl bg-gray-800 p-1">
-        <p class="text-xl">Solid knowledge</p>
-        <div class="my-2 flex items-center justify-start gap-1">
-            <p>
-                <Python /> Python: Help me to prototype something fast without having to worry on
-                details
-            </p>
+    <div class="m-1 rounded-2xl bg-gray-800 p-1">
+        <button
+            id="detailswitch"
+            class="absolute right-3 m-1 rounded-lg bg-gray-600 p-1 text-center font-semibold transition-all delay-0 duration-200 ease-in-out hover:bg-blue-600"
+            >Show more</button
+        >
+        <div id="lowdetailtools">
+            <p class="text-xl">Solid knowledge</p>
+            <p>Python</p>
+            <p class="text-xl">Medium knowledge</p>
+            <p>NodeJS, JavaScript, Go, HTML, CSS, TailwindCss, Git, Github, Svelte, SQLite</p>
+            <p class="text-xl">Basic knowledge</p>
+            <p>Astro, Bootstrap, Vue 3, TypeScript, Vercel, Linux, Docker, Java</p>
         </div>
-        <p class="text-xl">Medium knowledge</p>
-        <div class="my-2 flex items-center justify-start gap-1">
-            <p><NodeJS /> NodeJS: Useful to make backend server and other things that rely on it</p>
+        <div id="highdetailtools" class="hidden">
+            <p class="text-xl">Solid knowledge</p>
+            <div class="my-2 flex items-center justify-start gap-1">
+                <p>
+                    <TechIcon tech="Python" /> Python: Help me to prototype something fast without
+                    having to worry on details
+                </p>
+            </div>
+            <p class="text-xl">Medium knowledge</p>
+            <div class="my-2 flex items-center justify-start gap-1">
+                <p>
+                    <TechIcon tech="NodeJS" /> NodeJS: Useful to make backend server and other
+                    things that rely on it
+                </p>
+            </div>
+            <div class="my-2 flex items-center justify-start gap-1">
+                <p><TechIcon tech="JavaScript" /> JavaScript: It's used everywhere, idk why</p>
+            </div>
+            <div class="my-2 flex items-center justify-start gap-1">
+                <p>
+                    <TechIcon tech="Go" /> Go: When i want to code something that run <a
+                        class="italic">FAST</a
+                    >
+                </p>
+            </div>
+            <div class="my-2 flex items-center justify-start gap-1">
+                <p>
+                    <TechIcon tech="Html" /><TechIcon tech="Css" />
+                     HTML & CSS: A must to make a website
+                </p>
+            </div>
+            <div class="my-2 flex items-center justify-start gap-1">
+                <p>
+                    <TechIcon tech="TailwindCss" /> Tailwind: To prototype an UI without having to
+                    imagine any class name
+                </p>
+            </div>
+            <div class="my-2 flex items-center justify-start gap-1">
+                <p>
+                    <TechIcon tech="Git" /><TechIcon tech="GitHub" /> Git & GitHub: To share and
+                    keep track of my work. Github pages is also quite practical to deploy small
+                    websites
+                </p>
+            </div>
+            <div class="my-2 flex items-center justify-start gap-1">
+                <p>
+                    <TechIcon tech="Svelte" /> Svelte: An JavaScript framework that really good to
+                    work with
+                </p>
+            </div>
+            <div class="my-2 flex items-center justify-start gap-1">
+                <p><TechIcon tech="SQLite" /> SQLite & SQL: A must to work with databases</p>
+            </div>
+            <p class="text-xl">Basic knowledge</p>
+            <div class="my-2 flex items-center justify-start gap-1">
+                <p>
+                    <TechIcon tech="Astro" />
+                     Astro: Build fast website easily (less easily than with Svelte/SvelteKit)
+                </p>
+            </div>
+            <div class="my-2 flex items-center justify-start gap-1">
+                <p>
+                    <TechIcon tech="Bootstrap" />
+                     Bootstrap: Useful back when i didn't know Tailwind
+                </p>
+            </div>
+            <div class="my-2 flex items-center justify-start gap-1">
+                <p><TechIcon tech="VueJS" /> Vue 3: A good alternative to React</p>
+            </div>
+            <div class="my-2 flex items-center justify-start gap-1">
+                <p><TechIcon tech="TypeScript" /> TypeScript: JavaScript but more strict</p>
+            </div>
+            <div class="my-2 flex items-center justify-start gap-1">
+                <p>
+                    <TechIcon tech="Vercel" /> Vercel: A neat way to deploy web apps without hassle
+                </p>
+            </div>
+            <div class="my-2 flex items-center justify-start gap-1">
+                <p>
+                    <TechIcon tech="Linux" /> Linux: When Windows can't do what i want (like
+                    servers)
+                </p>
+            </div>
+            <div class="my-2 flex items-center justify-start gap-1">
+                <p>
+                    <TechIcon tech="Docker" /> Docker: To make an constant environment for my apps
+                </p>
+            </div>
+            <div class="my-2 flex items-center justify-start gap-1">
+                <p><TechIcon tech="Java" /> Java: To try to write Minecraft plugins</p>
+            </div>
         </div>
-        <div class="my-2 flex items-center justify-start gap-1">
-            <p><JavaScript /> JavaScript: It's used everywhere, idk why</p>
-        </div>
-        <div class="my-2 flex items-center justify-start gap-1">
-            <p><Go /> Go: When i want to code something that run <a class="italic">FAST</a></p>
-        </div>
-        <div class="my-2 flex items-center justify-start gap-1">
-            <p><Html /><Css /> HTML & CSS: A must to make a website</p>
-        </div>
-        <div class="my-2 flex items-center justify-start gap-1">
-            <p>
-                <TailwindCss /> Tailwind: To prototype an UI without having to imagine any class
-                name
-            </p>
-        </div>
-        <div class="my-2 flex items-center justify-start gap-1">
-            <p>
-                <Git /><Github /> Git & GitHub: To share and keep track of my work. Github pages is
-                also quite practical to deploy small websites
-            </p>
-        </div>
-        <div class="my-2 flex items-center justify-start gap-1">
-            <p><Svelte /> Svelte: An JavaScript framework that really good to work with</p>
-        </div>
-        <div class="my-2 flex items-center justify-start gap-1">
-            <p><SQLite /> SQLite & SQL: A must to work with databases</p>
-        </div>
-        <p class="text-xl">Basic knowledge</p>
-        <div class="my-2 flex items-center justify-start gap-1">
-            <p>
-                <AstroWeb /> Astro: Build fast website easily (less easily than with
-                Svelte/SvelteKit)
-            </p>
-        </div>
-        <div class="my-2 flex items-center justify-start gap-1">
-            <p><Bootstrap /> Bootstrap: Useful back when i didn't know Tailwind</p>
-        </div>
-        <div class="my-2 flex items-center justify-start gap-1">
-            <p><VueJS /> Vue 3: A good alternative to React</p>
-        </div>
-        <div class="my-2 flex items-center justify-start gap-1">
-            <p><TypeScript /> TypeScript: JavaScript but more strict</p>
-        </div>
-        <div class="my-2 flex items-center justify-start gap-1">
-            <p><Vercel /> Vercel: A neat way to deploy web apps without hassle</p>
-        </div>
-        <div class="my-2 flex items-center justify-start gap-1">
-            <p><Linux /> Linux: When Windows can't do what i want</p>
-        </div>
-        <div class="my-2 flex items-center justify-start gap-1">
-            <p><Docker /> Docker: To make an constant environment for my apps</p>
-        </div>
-        <div class="my-2 flex items-center justify-start gap-1">
-            <p><Java /> Java: To try to write Minecraft plugins</p>
-        </div>
-        <p></p>
     </div>
 </BaseLayout>
 <script>

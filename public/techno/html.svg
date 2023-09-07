@@ -1,9 +1,4 @@
----
-
----
-
-<div class="flex h-8 w-8 items-center justify-center">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="75 100 375 425" class="h-8 w-8">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="75 100 375 425" height="2rem" width="2rem">
         <path fill="#e44d26" d="M107.6 471l-33-370.4h362.8l-33 370.2L255.7 512"></path>
         <path fill="#f16529" d="M256 480.5V131H404.3L376 447"></path>
         <path
@@ -15,4 +10,3 @@
             d="M369.6 176.3H255.8v45.4h109.6M361.3 268.2H255.8v45.4h56l-5.3 59-50.7 13.6v47.2l93-25.8"
         ></path>
     </svg>
-</div>

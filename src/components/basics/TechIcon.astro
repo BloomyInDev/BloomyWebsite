@@ -1,0 +1,28 @@
+---
+const { tech } = Astro.props
+const techlist = {
+    Astro: '/techno/astro.svg',
+    Bootstrap: '/techno/bootstrap.svg',
+    Css: '/techno/css.svg',
+    Docker: '/techno/docker.svg',
+    Git: '/techno/git.svg',
+    GitHub: '/techno/github.svg',
+    Go: '/techno/go.svg',
+    Html: '/techno/html.svg',
+    Java: '/techno/java.svg',
+    JavaScript: '/techno/javascript.svg',
+    Linux: '/techno/linux.svg',
+    NodeJS: '/techno/nodejs.svg',
+    Python: '/techno/python.svg',
+    SQLite: '/techno/sqlite.svg',
+    Svelte: '/techno/svelte.svg',
+    TailwindCss: '/techno/tailwindcss.svg',
+    TypeScript: '/techno/typescript.svg',
+    Vercel: '/techno/vercel.svg',
+    VueJS: '/techno/vuejs.svg'
+}
+---
+
+<div class="flex h-8 w-8 items-center justify-center">
+    <img src={techlist[tech]} alt={tech} />
+</div>

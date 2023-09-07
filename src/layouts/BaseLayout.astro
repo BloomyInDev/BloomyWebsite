@@ -1,35 +1,38 @@
 ---
-import Navigation from '../components/Navigation.astro';
-import Footer from '../components/Footer.astro';
-const {extendedTitle} = Astro.props
+import Navigation from '../components/Navigation.astro'
+import Footer from '../components/Footer.astro'
+const { extendedTitle } = Astro.props
 ---
 
 <html lang="en">
     <head>
         <meta charset="utf-8" />
-		<link rel="icon" href="/me.webp" />
+        <link rel="icon" href="/me.webp" />
         <meta name="viewport" content="width=device-width" />
         <meta name="generator" content={Astro.generator} />
-        <title>{extendedTitle ? `${extendedTitle} - Bloomy Website` : "Bloomy Website"}</title>
+        <title>{extendedTitle ? `${extendedTitle} - Bloomy Website` : 'Bloomy Website'}</title>
         <!-- MetaData -->
-        <meta property="og:title" content="Bloomy">
+        <meta property="og:title" content="Bloomy" />
         <meta property="og:description" content="Bloomy personal website" />
-        <meta property="og:url" content="https://bloomyindev.vercel.app">
+        <meta property="og:url" content="https://bloomyindev.vercel.app" />
         <meta property="description" content="Bloomy personal website" />
         <!-- Vercel Insights -->
         <script>
-            window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+            window.va =
+                window.va ||
+                function () {
+                    ;(window.vaq = window.vaq || []).push(arguments)
+                }
         </script>
         <script defer src="/_vercel/insights/script.js"></script>
     </head>
-    <body class="from-blue-950 to-blue-900 bg-gradient-to-b">
-        <div class="m-0 text-gray-300 grid layout h-full min-h-screen">
-
-                <Navigation/>
-                <div class="m-1">
-                    <slot/>
-                </div>
-            <Footer/>
+    <body class="bg-gradient-to-b from-blue-950 to-blue-900">
+        <div class="layout m-0 grid h-full min-h-screen text-gray-300">
+            <Navigation />
+            <div class="m-1">
+                <slot />
+            </div>
+            <Footer />
         </div>
     </body>
 </html>

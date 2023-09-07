@@ -1,9 +1,4 @@
----
-
----
-
-<div class="flex h-8 w-8 items-center justify-center">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 92 92" class="h-8 w-8"
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 92 92" height="2rem" width="2rem"
         ><defs><clipPath id="a"><path d="M0 .113h91.887V92H0Zm0 0"></path></clipPath></defs><g
             clip-path="url(#a)"
             ><path
@@ -12,4 +7,3 @@
             ></path></g
         ></svg
     >
-</div>
