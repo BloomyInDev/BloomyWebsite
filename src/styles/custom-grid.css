@@ -1,8 +1,0 @@
-.custom-grid {
-    grid-template-columns: 1fr;
-}
-@media (min-width: 1024px) {
-    .custom-grid {
-        grid-template-columns: repeat(auto-fit, minmax(22rem, 1fr));
-    }
-}
