@@ -32,6 +32,7 @@ filteredPosts.sort((a, b) => Date.parse(b.frontmatter.pubDate) - Date.parse(a.fr
                 <div class="flex items-center justify-center">
                     <PostCard
                         postName={post.frontmatter.title}
+                        postDesc={post.frontmatter.description}
                         postUrl={post.url}
                         postDate={post.frontmatter.pubDate}
                     />
