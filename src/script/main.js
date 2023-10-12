@@ -9,4 +9,4 @@ const countdown = () => {
             parseInt(document.getElementById('countdown').innerText) - 1
     }
 }
-setInterval(countdown, 1000)
+let countdownId = setInterval(countdown, 1000)
