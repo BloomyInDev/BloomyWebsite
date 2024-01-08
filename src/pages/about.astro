@@ -25,7 +25,12 @@ import '../styles/custom-grid.css'
             >
             <div class="m-1">
                 <p>This section is just an summary of my experiences.</p>
-                <p>If you want a more detailed CV, please contact me</p>
+                <p>
+                    If you want a more detailed CV, please <a
+                        href="mailto:contact@bloomyindev.me"
+                        class="underline">contact me</a
+                    >
+                </p>
             </div>
         </div>
     </div>
@@ -48,7 +53,7 @@ import '../styles/custom-grid.css'
             projectName="NuageBleu"
             projectDesc="NuageBleu is a Discord Bot. Everything is hosted by WinHeberg (no pub)"
             projectDate="From February 25, 2023 to now"
-            projectUrl="https://nuagebleu.fun"
+            projectUrl="https://nuagebleu.fr"
         >
             <TechIcon tech="NodeJS" /><TechIcon tech="Svelte" /><TechIcon
                 tech="TailwindCss"
@@ -66,13 +71,29 @@ import '../styles/custom-grid.css'
     <p class="my-2 grow text-center text-2xl">My projects</p>
     <div class="custom-grid grid place-items-center gap-2">
         <ProjectCard
+            projectName="HeritageGenerator"
+            projectDesc="A program to make family tree"
+            projectDate="From October to November 2023"
+            projectUrl="https://github.com/BloomyInDev/HeritageGenerator"
+        >
+            <TechIcon tech="Python" />
+        </ProjectCard>
+        <ProjectCard
+            projectName="PokeLite"
+            projectDesc="A game for a homework where i needed to program in OOP"
+            projectDate="From October to November 2023"
+            projectUrl="https://github.com/BloomyInDev/PokeLite"
+        >
+            <TechIcon tech="Python" />
+        </ProjectCard>
+        <ProjectCard
             projectName="Bloomy Website"
             projectDesc="The website you are actually looking rn"
             projectDate="From June 19, 2023 to now"
-            projectUrl="https://github.com/BloomyInDev/NumworksVersionChecker"
+            projectUrl="https://github.com/BloomyInDev/BloomyWebsite"
         >
             <TechIcon tech="Astro" /><TechIcon tech="JavaScript" />
-            <TechIcon tech="TailwindCss" /><TechIcon tech="Vercel" />
+            <TechIcon tech="TailwindCss" />
         </ProjectCard>
         <ProjectCard
             projectName="Numworks Version Checker"
@@ -122,9 +143,9 @@ import '../styles/custom-grid.css'
             <p class="text-xl">Solid knowledge</p>
             <p>Python</p>
             <p class="text-xl">Medium knowledge</p>
-            <p>NodeJS, JavaScript, Go, HTML, CSS, TailwindCss, Git, Github, Svelte, SQLite</p>
+            <p>NodeJS, JavaScript, HTML, CSS, TailwindCss, Git, Github, Svelte, SQLite</p>
             <p class="text-xl">Basic knowledge</p>
-            <p>Astro, Bootstrap, Vue 3, TypeScript, Vercel, Linux, Docker, Java</p>
+            <p>Astro, Bootstrap, Vue 3, TypeScript, Vercel, Linux, Docker, Java, Go</p>
         </div>
         <div id="highdetailtools" class="hidden">
             <p class="text-xl">Solid knowledge</p>
@@ -143,13 +164,6 @@ import '../styles/custom-grid.css'
             </div>
             <div class="my-2 flex items-center justify-start gap-1">
                 <p><TechIcon tech="JavaScript" /> JavaScript: It's used everywhere, idk why</p>
-            </div>
-            <div class="my-2 flex items-center justify-start gap-1">
-                <p>
-                    <TechIcon tech="Go" /> Go: When i want to code something that run <a
-                        class="italic">FAST</a
-                    >
-                </p>
             </div>
             <div class="my-2 flex items-center justify-start gap-1">
                 <p>
@@ -216,6 +230,13 @@ import '../styles/custom-grid.css'
             </div>
             <div class="my-2 flex items-center justify-start gap-1">
                 <p><TechIcon tech="Java" /> Java: To try to write Minecraft plugins</p>
+            </div>
+            <div class="my-2 flex items-center justify-start gap-1">
+                <p>
+                    <TechIcon tech="Go" /> Go: When i want to code something that run <a
+                        class="italic">FAST</a
+                    >
+                </p>
             </div>
         </div>
     </div>

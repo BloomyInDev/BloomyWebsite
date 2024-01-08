@@ -1,0 +1,16 @@
+---
+const { extendedTitle } = Astro.props
+---
+
+<head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="/me.webp" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{extendedTitle ? `${extendedTitle} - Bloomy Website` : 'Bloomy Website'}</title>
+    <!-- MetaData -->
+    <meta property="og:title" content="Bloomy" />
+    <meta property="og:description" content="Bloomy personal website" />
+    <meta property="og:url" content="https://bloomyindev.vercel.app" />
+    <meta property="description" content="Bloomy personal website" />
+</head>
