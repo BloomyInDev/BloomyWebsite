@@ -12,7 +12,7 @@ let styleddate = date.toLocaleString('en-US', {
 ---
 
 <BaseLayout extendedTitle={frontmatter.title}>
-    <div class="my-0 flex flex-col items-center md:m-8">
+    <div class="my-0 flex flex-col items-center md:m-8" transition:animate="slide">
         <div
             class="min-h-32 m-1 mb-2 w-full overflow-clip rounded-xl bg-gray-800 p-2 shadow-xl md:max-w-2xl"
         >
@@ -28,7 +28,10 @@ let styleddate = date.toLocaleString('en-US', {
                 </div>
                 {
                     frontmatter.image.enable && (
-                        <div class="m-2 max-h-full max-w-full object-contain">
+                        <div
+                            class="m-2 max-h-full max-w-full object-contain"
+                            transition:animate="slide"
+                        >
                             <img
                                 src={frontmatter.image.url}
                                 alt={frontmatter.image.alt}

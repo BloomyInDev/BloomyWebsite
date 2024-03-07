@@ -1,7 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro'
 import PostCard from '../../components/basics/PostCard.astro'
-import Tag from '../../components/basics/Tag.astro'
+import TagComponent from '../../components/basics/Tag.astro'
 import '../../styles/custom-grid.css'
 export async function getStaticPaths() {
     const allPosts = await Astro.glob('../posts/*.md')
@@ -24,7 +24,9 @@ filteredPosts.sort((a, b) => Date.parse(b.frontmatter.pubDate) - Date.parse(a.fr
 ---
 
 <BaseLayout extendedTitle={`${tag} Tag`}>
-    <p class="text-center text-xl">Posts with tag <a class="font-bold"><Tag tag={tag} /></a></p>
+    <p class="text-center text-xl">
+        Posts with tag <a class="font-bold"><TagComponent tag={tag} /></a>
+    </p>
     <br />
     <div class="custom-grid grid justify-center gap-2">
         {

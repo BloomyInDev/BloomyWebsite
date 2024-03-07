@@ -10,7 +10,7 @@ const { extendedTitle } = Astro.props
     <body class="bg-gradient-to-b from-blue-950 to-blue-900">
         <div class="layout m-0 grid h-full min-h-screen text-gray-300">
             <Navigation />
-            <div class="m-1">
+            <div class="m-1" transition:animate="slide">
                 <slot />
             </div>
             <Footer />
