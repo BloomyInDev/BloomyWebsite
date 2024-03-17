@@ -7,7 +7,7 @@ import { ViewTransitions } from 'astro:transitions'
     <meta charset="utf-8" />
     <link rel="icon" href="/me.webp" />
     <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
+    <meta name="generator" content={`Made with ${Astro.generator} and TailwindCSS`} />
     <title>{extendedTitle ? `${extendedTitle} - Bloomy Website` : 'Bloomy Website'}</title>
     <ViewTransitions />
     <!-- MetaData -->
@@ -15,4 +15,5 @@ import { ViewTransitions } from 'astro:transitions'
     <meta property="og:description" content="Bloomy personal website" />
     <meta property="og:url" content="https://bloomyindev.me" />
     <meta property="description" content="Bloomy personal website" />
+    <meta name="description" content="Bloomy personal website" />
 </head>
