@@ -8,10 +8,10 @@ image:
     enable: true
     url: 'https://docs.astro.build/assets/full-logo-light.png'
     alt: 'The full Astro logo'
-tags: ["blogging"]
+tags: ['blogging']
 ---
 
-Welcome to my blog! Here, I will share my all my (_i thing_) useful content that i can thing of.
+Welcome to my blog! Here, I will share my all my (_i think_) useful content that i can thing of.
 
 Don't expect an constant flow of content, i will post when i have something interesting to post
 

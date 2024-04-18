@@ -7,7 +7,7 @@ author: 'Bloomy'
 image:
     enable: true
     url: '/posts/docker.svg'
-    alt: 'The full Astro logo'
+    alt: 'Docker logo'
 tags: ['blogging', 'docker', 'nodejs']
 ---
 
