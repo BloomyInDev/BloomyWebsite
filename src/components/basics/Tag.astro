@@ -1,8 +1,8 @@
 ---
 const { tag, href = '' } = Astro.props
-const stringToColorList = (str: string) => {
+const stringToColorList = (str: string): number[] => {
     let hash = 0
-    if (str.length === 0) return hash
+    if (str.length === 0) return [0, 0, 0]
     for (let i = 0; i < str.length; i++) {
         hash = str.charCodeAt(i) + ((hash << 5) - hash)
         hash = hash & hash
